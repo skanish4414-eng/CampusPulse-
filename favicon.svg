@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="CampusPulse favicon">
+  <defs>
+    <linearGradient id="g" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#7047eb"/>
+      <stop offset="55%" stop-color="#9d56d7"/>
+      <stop offset="100%" stop-color="#ff795f"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="#111222"/>
+  <rect x="8" y="8" width="48" height="48" rx="14" fill="url(#g)"/>
+  <path d="M18 40h28v6H18zm6-22h16v6H24zm-4 11h24v6H20z" fill="#fff" opacity="0.96"/>
+  <circle cx="47" cy="19" r="6" fill="#d9fa65"/>
+</svg>

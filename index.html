@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CampusPulse — a responsive college event management website project by SK Anisur Rahaman.">
+  <title>CampusPulse | College Event Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="portal.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="announcement"><span class="pulse-dot"></span> CAMPUS SEASON 2026 <span class="announcement-sep">/</span> Discover. Create. Celebrate.</div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="CampusPulse home">
+      <span class="brand-mark">CP<span>+</span></span>
+      <span class="brand-copy"><strong>CampusPulse</strong><small>COLLEGE EVENT HUB</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#events" class="nav-link">Events</a>
+      <a href="#register" class="nav-link">Register for event</a>
+      <a href="#account" class="nav-link">Login / Sign up</a>
+      <a href="#student" class="nav-link">Student portal</a>
+      <a href="#admin" class="nav-link">Administration</a>
+      <a href="#gallery" class="nav-link">Gallery</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button id="themeToggle" class="icon-button" aria-label="Toggle dark mode" title="Toggle theme">☾</button>
+      <a class="button button-small button-primary" href="#account">Get started <span>↗</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="eyebrow-line"></span> YOUR CAMPUS, YOUR STAGE</p>
+        <h1>Make your<br>campus <span class="gradient-text">come alive.</span></h1>
+        <p class="hero-description">One place for bold ideas, brilliant people, unforgettable performances and the next big campus moment.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#events">Explore events <span>↗</span></a>
+          <a class="button button-outline" href="#about"><span class="play-icon">▶</span> Discover CampusPulse</a>
+        </div>
+        <div class="hero-proof">
+          <div class="avatar-stack"><span>A</span><span>S</span><span>R</span><span>+</span></div>
+          <div><strong>Built for student life</strong><small>Ideas turn into experiences here.</small></div>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div>
+        <div class="hero-art">
+          <div class="art-topline"><span>LIVE ON CAMPUS</span><span class="live-label">● LIVE ENERGY</span></div>
+          <div class="art-sun"></div>
+          <div class="art-shape shape-a"></div><div class="art-shape shape-b"></div><div class="art-shape shape-c"></div>
+          <div class="art-bottom"><span>IDEAS<br>IN MOTION</span><span class="art-arrow">↗</span></div>
+        </div>
+        <div class="floating-card floating-date"><span class="mini-icon">✦</span><div><small>NEXT BIG MOMENT</small><strong id="nextEventName">InnovateX 2026</strong><span id="nextEventDate">Coming soon</span></div></div>
+        <div class="floating-card floating-countdown"><small>COUNTDOWN TO NEXT EVENT</small><div class="countdown" id="countdown"><span><b>--</b><small>DAYS</small></span><i>:</i><span><b>--</b><small>HRS</small></span><i>:</i><span><b>--</b><small>MIN</small></span><i>:</i><span><b>--</b><small>SEC</small></span></div></div>
+      </div>
+      <div class="hero-stats">
+        <div><strong data-count="12">0</strong><span>Campus events</span></div><div><strong data-count="850">0</strong><span>Student community</span></div><div><strong data-count="6">0</strong><span>Experience tracks</span></div><div class="stats-note">MAKE THIS<br>SEMESTER COUNT <span>↘</span></div>
+      </div>
+    </section>
+
+    <section class="section-wrap events-section" id="events">
+      <div class="section-heading reveal"><div><p class="eyebrow">THE LINEUP</p><h2>Find your <span class="gradient-text">next thing.</span></h2></div><p>From code to culture, find a room full of people who are into what you love.</p></div>
+      <div class="filter-row" id="eventFilters" aria-label="Filter events">
+        <button class="filter-chip selected" data-filter="All">All events <span id="eventCount">6</span></button>
+        <button class="filter-chip" data-filter="Technical">Technical</button>
+        <button class="filter-chip" data-filter="Workshop">Workshops</button>
+        <button class="filter-chip" data-filter="Cultural">Cultural</button>
+        <button class="filter-chip" data-filter="Talk">Talks</button>
+      </div>
+      <div class="events-grid" id="eventsGrid" aria-live="polite"></div>
+      <div class="center-action"><button class="button button-outline" id="showAllEvents">Show all events <span>＋</span></button></div>
+    </section>
+
+    <section class="feature-band">
+      <div class="section-wrap feature-inner reveal"><div class="feature-symbol">✳</div><div><p class="eyebrow">MORE THAN A CALENDAR</p><h2>Find your people.<br><span class="gradient-text">Build your story.</span></h2></div><p>Join a team, learn something new, put your work out there, and make memories that last beyond the semester.</p><a class="button button-light" href="#register">Get involved <span>↗</span></a></div>
+    </section>
+
+    <section class="section-wrap auth-section" id="account">
+      <div class="section-heading reveal"><div><p class="eyebrow">YOUR CAMPUS ID</p><h2>Welcome to your <span class="gradient-text">community.</span></h2></div><p>Create a local demo account or sign in to see a personalized welcome. This front-end demo does not provide server-secured authentication.</p></div>
+      <div class="auth-layout">
+        <div class="auth-promo"><span class="auth-orb">✦</span><p class="eyebrow">CAMPUSPULSE MEMBERS</p><h3>Good things happen when you <span>show up.</span></h3><p>Keep your campus experience moving: discover events, join activities and make memories.</p><div class="auth-perks"><span>✓ Event discovery</span><span>✓ Student community</span><span>✓ Your local profile</span></div></div>
+        <div class="auth-panel">
+          <div class="auth-tabs" role="tablist"><button class="auth-tab active" type="button" data-auth-tab="login">Login</button><button class="auth-tab" type="button" data-auth-tab="signup">Create account</button></div>
+          <form id="loginForm" class="auth-form" novalidate>
+            <h3>Welcome back 👋</h3><p>Sign in to your CampusPulse demo account.</p>
+            <div class="field"><label for="loginEmail">Email address</label><input id="loginEmail" type="email" autocomplete="email" required placeholder="you@example.com"><small class="error-message"></small></div>
+            <div class="field"><label for="loginPassword">Password</label><div class="password-wrap"><input id="loginPassword" type="password" autocomplete="current-password" required minlength="6" placeholder="At least 6 characters"><button type="button" class="password-toggle" data-toggle-password="loginPassword" aria-label="Show password">Show</button></div><small class="error-message"></small></div>
+            <button class="button button-primary auth-submit" type="submit">Login to CampusPulse <span>↗</span></button><p class="form-status" id="loginStatus" role="status"></p>
+            <p class="auth-switch">New here? <button type="button" data-auth-tab="signup">Create an account</button></p>
+          </form>
+          <form id="signupForm" class="auth-form" hidden novalidate>
+            <h3>Create your account ✨</h3><p>Join the campus community in a few steps.</p>
+            <div class="field"><label for="signupName">Full name</label><input id="signupName" autocomplete="name" required placeholder="Your full name"><small class="error-message"></small></div>
+            <div class="field"><label for="signupEmail">Email address</label><input id="signupEmail" type="email" autocomplete="email" required placeholder="you@example.com"><small class="error-message"></small></div>
+            <div class="field"><label for="signupPassword">Create password</label><div class="password-wrap"><input id="signupPassword" type="password" autocomplete="new-password" minlength="6" required placeholder="At least 6 characters"><button type="button" class="password-toggle" data-toggle-password="signupPassword" aria-label="Show password">Show</button></div><small class="error-message"></small></div>
+            <div class="field"><label for="signupConfirm">Confirm password</label><input id="signupConfirm" type="password" autocomplete="new-password" required placeholder="Enter password again"><small class="error-message"></small></div>
+            <label class="auth-consent"><input id="signupConsent" type="checkbox"> I agree to create a local demo profile.</label>
+            <button class="button button-primary auth-submit" type="submit">Create my account <span>↗</span></button><p class="form-status" id="signupStatus" role="status"></p>
+            <p class="auth-switch">Already registered? <button type="button" data-auth-tab="login">Login</button></p>
+          </form>
+          <div id="accountDashboard" class="account-dashboard" hidden><span class="account-avatar" id="accountAvatar">C</span><p class="eyebrow">YOU'RE SIGNED IN</p><h3 id="accountGreeting">Hello!</h3><p id="accountEmail"></p><div class="account-actions"><a class="button button-primary" href="#events">Explore events ↗</a><a class="button button-outline" href="#register">Register for an event</a></div><button class="logout-button" id="logoutButton" type="button">Log out</button></div>
+          <p class="auth-security-note">Demo only: accounts are stored in this browser. Do not use a real password or sensitive information. A production website needs server-side authentication and secure password hashing.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-wrap register-section" id="register">
+      <div class="section-heading reveal"><div><p class="eyebrow">SAVE YOUR SPOT</p><h2>You're on the <span class="gradient-text">list.</span></h2></div><p>Fill in the details and choose the event you want to be part of. The form validates your entries before confirming.</p></div>
+      <div class="registration-layout">
+        <div class="register-aside reveal"><div class="aside-number">01 <span>/ REGISTRATION</span></div><h3>Your next<br>chapter starts<br><span class="gradient-text">right here.</span></h3><ul><li><span>✓</span> Quick student registration</li><li><span>✓</span> Instant field validation</li><li><span>✓</span> Confirmation preview</li></ul><div class="aside-note">DEMO PROJECT · NO DATA IS SENT TO A SERVER</div></div>
+        <form class="registration-form reveal" id="registrationForm" novalidate>
+          <div class="form-title"><h3>Student registration</h3><span class="required-note">* Required fields</span></div>
+          <div class="form-grid">
+            <div class="field"><label for="studentName">Full name *</label><input id="studentName" name="studentName" placeholder="e.g. Anisur Rahaman" autocomplete="name"><small class="error-message"></small></div>
+            <div class="field"><label for="rollNumber">Roll number *</label><input id="rollNumber" name="rollNumber" placeholder="Enter your roll number"><small class="error-message"></small></div>
+            <div class="field"><label for="email">Email address *</label><input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email"><small class="error-message"></small></div>
+            <div class="field"><label for="phone">Phone number *</label><input id="phone" name="phone" type="tel" placeholder="10-digit mobile number" autocomplete="tel"><small class="error-message"></small></div>
+            <div class="field"><label for="department">Department *</label><select id="department" name="department"><option value="">Choose department</option><option>CSE</option><option>CSE (AIML)</option><option>IT</option><option>ECE</option><option>EE</option><option>Mechanical</option><option>Other</option></select><small class="error-message"></small></div>
+            <div class="field"><label for="eventSelect">Choose event *</label><select id="eventSelect" name="eventSelect"><option value="">Choose an event</option></select><small class="error-message"></small></div>
+            <fieldset class="field full-width"><legend>Gender (optional)</legend><div class="radio-row"><label><input type="radio" name="gender" value="Woman"> Woman</label><label><input type="radio" name="gender" value="Man"> Man</label><label><input type="radio" name="gender" value="Prefer not to say"> Prefer not to say</label></div></fieldset>
+            <div class="field full-width"><label for="message">What are you looking forward to? (optional)</label><textarea id="message" name="message" rows="3" placeholder="Share a short note..."></textarea></div>
+            <div class="field full-width consent-field"><label><input id="consent" type="checkbox"> I confirm that the information above is correct.</label><small class="error-message"></small></div>
+          </div>
+          <button class="button button-primary submit-button" type="submit">Complete registration <span>↗</span></button>
+          <p class="form-status" id="formStatus" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section-wrap portal-section" id="student">
+      <div class="section-heading reveal"><div><p class="eyebrow">STUDENT PORTION</p><h2>Your campus <span class="gradient-text">activity.</span></h2></div><p>Look up your registrations using the same roll number and email address you submitted. Your details appear only in this browser demo.</p></div>
+      <div class="portal-card reveal">
+        <form class="portal-lookup" id="studentLookupForm" novalidate>
+          <div class="field"><label for="lookupRoll">Roll number</label><input id="lookupRoll" autocomplete="off" required placeholder="Enter your roll number"></div>
+          <div class="field"><label for="lookupEmail">Registration email</label><input id="lookupEmail" type="email" autocomplete="email" required placeholder="you@example.com"></div>
+          <button class="button button-primary" type="submit">View my details <span>↗</span></button>
+        </form>
+        <p class="form-status" id="studentLookupStatus" role="status" aria-live="polite">Your event registrations will appear here after you look them up.</p>
+        <div class="student-results" id="studentResults" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section-wrap portal-section admin-section" id="admin">
+      <div class="section-heading reveal"><div><p class="eyebrow">ADMINISTRATION PORTION</p><h2>Registration <span class="gradient-text">directory.</span></h2></div><p>Review student registration details, including email addresses and contact numbers. Search, filter, and export the list.</p></div>
+      <div class="admin-notice"><strong>Local demo only</strong><span>These records are stored in this browser and are not protected by administrator sign-in. Do not use real or sensitive student data. A secure shared portal needs a server and authentication.</span></div>
+      <div class="admin-stats" aria-live="polite">
+        <article><span>Total registrations</span><strong id="adminTotal">0</strong></article>
+        <article><span>Unique students</span><strong id="adminStudents">0</strong></article>
+        <article><span>Events represented</span><strong id="adminEvents">0</strong></article>
+      </div>
+      <div class="admin-toolbar">
+        <label class="admin-search"><span class="visually-hidden">Search registrations</span><input id="adminSearch" type="search" placeholder="Search name, roll, email or phone"></label>
+        <label class="admin-event-filter"><span class="visually-hidden">Filter by event</span><select id="adminEventFilter"><option value="">All events</option></select></label>
+        <button class="button button-outline" id="exportRegistrations" type="button">Export CSV <span>↓</span></button>
+        <button class="button button-danger" id="clearRegistrations" type="button">Clear all</button>
+      </div>
+      <p class="form-status admin-status" id="adminStatus" role="status" aria-live="polite"></p>
+      <div class="table-scroll">
+        <table class="registration-table">
+          <thead><tr><th>Student</th><th>Roll number</th><th>Email</th><th>Contact number</th><th>Department</th><th>Event</th><th>Registered</th><th><span class="visually-hidden">Actions</span></th></tr></thead>
+          <tbody id="adminRegistrations"><tr><td class="empty-state" colspan="8">No registrations have been saved in this browser yet.</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section-wrap gallery-section" id="gallery">
+      <div class="section-heading reveal"><div><p class="eyebrow">CAMPUS IN COLOUR</p><h2>Little moments.<br><span class="gradient-text">Big memories.</span></h2></div><p>A glimpse of the energy that happens when curious minds get together.</p></div>
+      <div class="gallery-grid">
+        <figure class="gallery-card gallery-tall reveal"><img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=900&q=85" alt="Audience attending a conference" loading="lazy"><figcaption><span>01 / COMMUNITY</span><strong>Room full of ideas</strong></figcaption></figure>
+        <figure class="gallery-card reveal"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=85" alt="Students collaborating around a laptop" loading="lazy"><figcaption><span>02 / COLLABORATION</span><strong>Build it together</strong></figcaption></figure>
+        <figure class="gallery-card reveal"><img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=800&q=85" alt="Concert crowd enjoying a live performance" loading="lazy"><figcaption><span>03 / CULTURE</span><strong>Feel the moment</strong></figcaption></figure>
+        <figure class="gallery-card reveal"><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=85" alt="Team working together at a table" loading="lazy"><figcaption><span>04 / TEAMWORK</span><strong>Better, together</strong></figcaption></figure>
+        <figure class="gallery-card reveal"><img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=800&q=85" alt="University students walking across campus" loading="lazy"><figcaption><span>05 / CAMPUS LIFE</span><strong>Find your place</strong></figcaption></figure>
+        <figure class="gallery-card gallery-wide reveal"><img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1000&q=85" alt="Speaker presenting on stage" loading="lazy"><figcaption><span>06 / INSPIRATION</span><strong>Ideas worth sharing</strong></figcaption></figure>
+      </div>
+      <p class="image-note">Gallery photos load from Unsplash when an internet connection is available. Replace them with your own event photos for final submission.</p>
+    </section>
+
+    <section class="about-section" id="about"><div class="section-wrap about-layout"><div class="about-copy reveal"><p class="eyebrow">THE IDEA BEHIND IT</p><h2>Made for the<br><span class="gradient-text">makers & doers.</span></h2><p>CampusPulse is a student-focused College Event Management Website created as an academic web-development project. It brings event discovery, registration, campus highlights and feedback into one responsive experience.</p><p>The project demonstrates how HTML structures content, CSS creates a consistent visual system, and JavaScript adds useful behaviour.</p><a class="text-link" href="#contact">Meet the project team <span>↗</span></a></div><div class="about-panel reveal"><div class="panel-top"><span>PROJECT SNAPSHOT</span><span class="panel-status">● IN PROGRESS</span></div><div class="snapshot-row"><span>01</span><div><strong>Structure</strong><small>Semantic HTML5 sections and forms</small></div><b>HTML</b></div><div class="snapshot-row"><span>02</span><div><strong>Visual system</strong><small>Responsive CSS Grid, Flexbox and themes</small></div><b>CSS</b></div><div class="snapshot-row"><span>03</span><div><strong>Interaction</strong><small>Filters, validation, countdown and clock</small></div><b>JS</b></div><div class="snapshot-footer"><span>PROJECT AUTHOR</span><strong>SK Anisur Rahaman</strong></div></div></div></section>
+
+    <section class="section-wrap contact-section" id="contact"><div class="section-heading reveal"><div><p class="eyebrow">SAY HELLO</p><h2>Let's make something <span class="gradient-text">happen.</span></h2></div><p>Have a question or an idea for the next campus event? Leave a message in the demo feedback form.</p></div>
+      <div class="contact-layout"><div class="contact-details reveal"><div class="contact-item"><span class="contact-icon">↗</span><div><small>PROJECT AUTHOR</small><strong>SK Anisur Rahaman</strong></div></div><div class="contact-item"><span class="contact-icon">⌘</span><div><small>PROJECT TYPE</small><strong>HTML · CSS · JavaScript</strong></div></div><div class="contact-item"><span class="contact-icon">◎</span><div><small>PROJECT PURPOSE</small><strong>Academic demonstration</strong></div></div><p class="contact-disclaimer">This is a front-end demonstration. No messages or registrations are transmitted or stored on a server.</p></div>
+      <form id="feedbackForm" class="feedback-form reveal" novalidate><h3>Send a note</h3><div class="field"><label for="feedbackName">Your name *</label><input id="feedbackName" placeholder="Your name"><small class="error-message"></small></div><div class="field"><label for="feedbackEmail">Email address *</label><input id="feedbackEmail" type="email" placeholder="you@example.com"><small class="error-message"></small></div><div class="field"><label for="feedbackMessage">Message *</label><textarea id="feedbackMessage" rows="4" placeholder="Write at least 15 characters..."></textarea><small class="error-message"></small></div><button class="button button-primary" type="submit">Send feedback <span>↗</span></button><p class="form-status" id="feedbackStatus" role="status"></p></form></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand footer-brand" href="#home"><span class="brand-mark">CP<span>+</span></span><span class="brand-copy"><strong>CampusPulse</strong><small>COLLEGE EVENT HUB</small></span></a><p>Designed and developed by <strong>SK Anisur Rahaman</strong></p><div class="footer-right"><span>HTML5 · CSS3 · JAVASCRIPT</span><a href="#home">BACK TO TOP ↑</a></div></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
